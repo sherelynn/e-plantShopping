@@ -21,10 +21,10 @@ const CartItem = ({ onContinueShopping }) => {
     alert("Functionality to be added fro future reference")
   }
 
+  // Handle functions to add, reduce and remove items in the cart
   const handleIncrement = (item) => {
     dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }))
   }
-
   const handleDecrement = (item) => {
     item.quantity > 1
       ? dispatch(
@@ -32,7 +32,6 @@ const CartItem = ({ onContinueShopping }) => {
         )
       : dispatch(removeItem(item.name))
   }
-
   const handleRemove = (item) => {
     dispatch(removeItem(item.name))
   }
