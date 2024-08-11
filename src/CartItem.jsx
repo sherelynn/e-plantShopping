@@ -21,7 +21,6 @@ const CartItem = ({ onContinueShopping }) => {
     alert("Functionality to be added fro future reference")
   }
 
-  // dispatch updateQuantity reducer. Add oen tot the item.quanitity
   const handleIncrement = (item) => {
     dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }))
   }
@@ -34,7 +33,9 @@ const CartItem = ({ onContinueShopping }) => {
       : dispatch(removeItem(item.name))
   }
 
-  const handleRemove = (item) => {}
+  const handleRemove = (item) => {
+    dispatch(removeItem(item.name))
+  }
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {}
