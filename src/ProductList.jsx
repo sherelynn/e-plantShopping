@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useDispatch } from "react"
 import "./ProductList.css"
 import CartItem from "./CartItem"
 import { addItem } from "./CartSlice"
@@ -7,6 +7,7 @@ function ProductList() {
   const [showCart, setShowCart] = useState(false)
   const [showPlants, setShowPlants] = useState(false) // State to control the visibility of the About Us page
   const [addedToCart, setAddedToCart] = useState({})
+  const dispatch = useDispatch()
 
   // Array of products to display in Product listing Page
   const plantsArray = [
@@ -293,10 +294,10 @@ function ProductList() {
 
   // Add to cart handler
   const handleAddToCart = (product) => {
-    dispatchEvent(addItem(product))
+    dispatch(addItem(product))
     setAddedToCart((prevState) => ({
       ...prevState,
-      [product.name]: true,
+      [product.name]: true, // Set the product name as key and value as true to indicate it's added to cart
     }))
   }
 
