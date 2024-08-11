@@ -16,6 +16,11 @@ const CartItem = ({ onContinueShopping }) => {
     onContinueShopping(e)
   }
 
+  const handleCheckoutShopping = (e) => {
+    e.preventDefault()
+    alert("Functionality to be added fro future reference")
+  }
+
   const handleIncrement = (item) => {}
 
   const handleDecrement = (item) => {}
@@ -74,7 +79,11 @@ const CartItem = ({ onContinueShopping }) => {
           Continue Shopping
         </button>
         <br />
-        <button className="get-started-button1">Checkout</button>
+        <button
+          className="get-started-button1"
+          onClick={handleCheckoutShopping}>
+          Checkout
+        </button>
       </div>
     </div>
   )
