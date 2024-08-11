@@ -12,7 +12,9 @@ const CartItem = ({ onContinueShopping }) => {
     return cart.reduce((total, item) => total + item.quantity * item.cost, 0)
   }
 
-  const handleContinueShopping = (e) => {}
+  const handleContinueShopping = (e) => {
+    onContinueShopping(e)
+  }
 
   const handleIncrement = (item) => {}
 
