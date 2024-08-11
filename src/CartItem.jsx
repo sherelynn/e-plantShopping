@@ -21,7 +21,10 @@ const CartItem = ({ onContinueShopping }) => {
     alert("Functionality to be added fro future reference")
   }
 
-  const handleIncrement = (item) => {}
+  // dispatch updateQuantity reducer. Add oen tot the item.quanitity
+  const handleIncrement = (item) => {
+    dispatch(updateQuantity({ name: item.name, quantity: item.quantity + 1 }))
+  }
 
   const handleDecrement = (item) => {}
 
